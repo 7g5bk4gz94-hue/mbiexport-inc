@@ -36,20 +36,20 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255,255,255,0.96);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
 }
 
 .header-inner {
-  height: 96px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .brand img {
-  height: 72px;
+  height: 88px;
   width: auto;
   display: block;
 }
@@ -60,6 +60,10 @@ body {
   color: var(--blue);
   font-size: 14px;
   font-weight: 700;
+}
+
+.nav a:hover {
+  color: var(--green);
 }
 
 .header-btn {
@@ -75,21 +79,21 @@ body {
 
 .hero {
   min-height: 100vh;
-  padding-top: 96px;
+  padding-top: 110px;
   display: flex;
   align-items: center;
-  position: relative;
-  color: var(--white);
-  background:
-    linear-gradient(90deg, rgba(7, 24, 39, 0.88), rgba(7, 24, 39, 0.45)),
-    url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1800&q=80");
-  background-size: cover;
-  background-position: center;
+  background: var(--white);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
 }
 
 .hero-content {
-  max-width: 760px;
-  position: relative;
+  max-width: 620px;
 }
 
 .slogan,
@@ -103,16 +107,17 @@ body {
 }
 
 .hero h1 {
-  font-size: 72px;
+  color: var(--dark);
+  font-size: 70px;
   line-height: 1;
   letter-spacing: -3px;
   margin-bottom: 28px;
 }
 
 .hero-text {
-  max-width: 640px;
+  max-width: 620px;
   font-size: 21px;
-  color: #dce6ef;
+  color: var(--muted);
   margin-bottom: 36px;
 }
 
@@ -136,16 +141,29 @@ body {
 }
 
 .btn.secondary {
-  border: 1px solid rgba(255,255,255,0.5);
-  color: var(--white);
+  border: 1px solid var(--border);
+  color: var(--blue);
+  background: var(--white);
+}
+
+.hero-image {
+  height: 560px;
+  border-radius: 34px;
+  background:
+    linear-gradient(rgba(7,24,39,0.08), rgba(7,24,39,0.08)),
+    url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1400&q=80");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 30px 80px rgba(7,24,39,0.16);
 }
 
 .section {
   padding: 105px 0;
 }
 
-.section-heading {
-  max-width: 760px;
+.expertise,
+.process {
+  background: var(--light);
 }
 
 h2 {
@@ -153,6 +171,7 @@ h2 {
   font-size: 46px;
   line-height: 1.12;
   letter-spacing: -1.5px;
+  max-width: 760px;
   margin-bottom: 22px;
 }
 
@@ -161,12 +180,7 @@ p {
   font-size: 18px;
 }
 
-.solutions,
-.process {
-  background: var(--light);
-}
-
-.solution-grid,
+.cards,
 .trust-grid,
 .process-grid {
   display: grid;
@@ -175,28 +189,38 @@ p {
   margin-top: 54px;
 }
 
-.solution-card,
+.card,
 .trust-grid div,
 .process-grid div {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 30px;
+  min-height: 230px;
 }
 
-.solution-card span,
+.card span,
 .process-grid span {
   color: var(--green);
   font-size: 13px;
   font-weight: 900;
 }
 
-.solution-card h3,
+.card h3,
 .trust-grid h3,
 .process-grid h3 {
   color: var(--dark);
   font-size: 20px;
   margin: 16px 0 12px;
+}
+
+.card {
+  transition: 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(31,155,103,0.35);
 }
 
 .about-grid,
@@ -216,6 +240,10 @@ p {
 
 .industries h2 {
   color: var(--white);
+}
+
+.industries p {
+  color: #dce6ef;
 }
 
 .industry-tags {
@@ -272,26 +300,31 @@ p {
   font-size: 14px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .nav,
   .header-btn {
     display: none;
   }
 
   .header-inner {
-    height: 82px;
+    height: 88px;
   }
 
   .brand img {
-    height: 58px;
+    height: 68px;
   }
 
   .hero {
-    padding-top: 82px;
+    padding-top: 88px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .hero h1 {
-    font-size: 44px;
+    font-size: 46px;
     letter-spacing: -1.5px;
   }
 
@@ -299,11 +332,15 @@ p {
     font-size: 18px;
   }
 
+  .hero-image {
+    height: 340px;
+  }
+
   .hero-actions {
     flex-direction: column;
   }
 
-  .solution-grid,
+  .cards,
   .trust-grid,
   .process-grid,
   .about-grid,
