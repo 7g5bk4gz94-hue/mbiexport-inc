@@ -167,12 +167,25 @@
       border: 1px solid rgba(53,201,255,0.28);
       border-radius: 14px;
       overflow: hidden;
+      transition: 0.35s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: #35C9FF;
+      box-shadow: 0 25px 60px rgba(53,201,255,0.18);
     }
 
     .product-card img {
       width: 100%;
-      height: 170px;
+      height: 230px;
       object-fit: cover;
+      display: block;
+      transition: 0.45s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
     }
 
     .product-card div {
@@ -370,7 +383,7 @@
 
   <div class="products">
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=900&q=80">
+      <img src="burners.png" alt="Industrial Burners">
       <div>
         <h3>Industrial Burners</h3>
         <p>High-efficiency burners for boilers and process heating systems.</p>
@@ -379,7 +392,7 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1581093458791-9d15482442f6?auto=format&fit=crop&w=900&q=80">
+      <img src="boilers.png" alt="Boilers and Boiler Room Equipment">
       <div>
         <h3>Boilers & Boiler Room Equipment</h3>
         <p>Steam boilers, hot water boilers, economizers, deaerators and auxiliary equipment.</p>
@@ -388,7 +401,7 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80">
+      <img src="pumps.png" alt="KRAL Pumps">
       <div>
         <h3>KRAL Pumps</h3>
         <p>High-quality screw pumps for marine, industrial and energy applications.</p>
@@ -397,7 +410,7 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80">
+      <img src="parts.png" alt="Spare Parts and Components">
       <div>
         <h3>Spare Parts & Components</h3>
         <p>Original spare parts for industrial equipment and process systems.</p>
@@ -406,7 +419,7 @@
     </div>
 
     <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=900&q=80">
+      <img src="agriculture.png" alt="Agricultural Machinery and Parts">
       <div>
         <h3>Agricultural Machinery & Parts</h3>
         <p>Agricultural equipment and original spare parts for leading brands.</p>
