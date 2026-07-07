@@ -301,4 +301,26 @@ footer {
   footer {
     flex-direction: column;
   }
+  /* FIX HERO IMAGE + LOGO */
+
+.logo img {
+  height: 145px !important;
+  width: auto;
+  transform: scale(1.25);
+  transform-origin: left center;
+}
+
+.hero {
+  background: #ffffff !important;
+}
+
+.hero-photo {
+  display: block !important;
+  min-height: calc(100vh - 170px) !important;
+  width: 100% !important;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,.65) 22%, rgba(255,255,255,0) 42%),
+    url("https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1800&q=80") !important;
+  background-size: cover !important;
+  background-position: center !important;
 }
