@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MBIExport | Industrial Equipment & Parts Supply</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #062c33;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 6%;
+      background: #031d22;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 11px;
+      color: #20d0ca;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #20d0ca;
+    }
+
+    .btn {
+      background: #20d0ca;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      border: 1px solid #20d0ca;
+    }
+
+    .btn-outline {
+      background: transparent;
+    }
+
+    .hero {
+      min-height: 720px;
+      padding: 140px 6% 80px;
+      background:
+        linear-gradient(90deg, rgba(3,29,34,0.95), rgba(3,29,34,0.55)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=80");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      color: #20d0ca;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin: 20px 0;
+    }
+
+    h2 {
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    p {
+      color: #c6d9dc;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      gap: 18px;
+    }
+
+    .section {
+      padding: 80px 6%;
+      max-width: 1280px;
+      margin: auto;
+    }
+
+    .trust-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin: -60px 6% 40px;
+      border: 1px solid rgba(32,208,202,0.3);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .trust-item {
+      padding: 28px;
+      font-weight: bold;
+      border-right: 1px solid rgba(32,208,202,0.25);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(32,208,202,0.25);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 35px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(32,208,202,0.25);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+    }
+
+    .product-card div {
+      padding: 22px;
+    }
+
+    .product-card a {
+      color: #20d0ca;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .supply {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .regions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .region-card {
+      min-height: 220px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(32,208,202,0.25);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .region-card span {
+      font-size: 42px;
+    }
+
+    .logistics {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .stats div {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(32,208,202,0.25);
+      border-radius: 14px;
+      padding: 30px;
+    }
+
+    .stats strong {
+      display: block;
+      font-size: 36px;
+      color: white;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 40px;
+    }
+
+    form {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(32,208,202,0.25);
+      border-radius: 14px;
+      padding: 30px;
+      display: grid;
+      gap: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 16px;
+      border-radius: 6px;
+      border: 1px solid rgba(32,208,202,0.25);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(32,208,202,0.25);
+      color: #c6d9dc;
+    }
+
+    @media (max-width: 1000px) {
+      nav {
+        display: none;
+      }
+
+      .trust-bar,
+      .features,
+      .products,
+      .regions,
+      .supply,
+      .logistics,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .section-head {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="#">
+    MBIEXPORT
+    <span>Industrial Solutions</span>
+  </a>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#products">Products</a>
+    <a href="#supply">Supply Regions</a>
+    <a href="#logistics">Logistics</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <a class="btn" href="#contact">Request a Quote</a>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">Industrial Equipment & Parts Supply</p>
+    <h1>Delivering Industrial Solutions from Canada to the World</h1>
+    <p>
+      MBIExport supplies industrial equipment, original spare parts and agricultural machinery
+      from leading manufacturers in Canada, USA and Europe to businesses in Kazakhstan and CIS countries.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn" href="#contact">Request a Quote</a>
+      <a class="btn btn-outline" href="#products">Our Products</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item">Original Products from Manufacturers</div>
+  <div class="trust-item">Trusted Quality Guaranteed</div>
+  <div class="trust-item">Worldwide Delivery to CIS Countries</div>
+  <div class="trust-item">Technical Support & After-Sales Service</div>
+</div>
+
+<section id="about" class="section features">
+  <div class="card">
+    <h3>Direct Supply from Manufacturers</h3>
+    <p>We work directly with reliable manufacturers and official suppliers to offer competitive pricing and quality.</p>
+  </div>
+
+  <div class="card">
+    <h3>International Experience</h3>
+    <p>Experience in global trade, procurement, logistics and project supply across multiple industries.</p>
+  </div>
+
+  <div class="card">
+    <h3>Technical Expertise</h3>
+    <p>We support clients with equipment selection, documentation, installation and maintenance coordination.</p>
+  </div>
+
+  <div class="card">
+    <h3>Warranty & Reliability</h3>
+    <p>Products are supplied with manufacturer warranty, certificates and supporting documentation.</p>
+  </div>
+</section>
+
+<section id="products" class="section">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">Our Products</p>
+      <h2>Comprehensive Range of Industrial Equipment and Solutions</h2>
+    </div>
+    <a class="btn btn-outline" href="#contact">View All Products</a>
+  </div>
+
+  <div class="products">
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=900&q=80">
+      <div>
+        <h3>Industrial Burners</h3>
+        <p>High-efficiency burners for boilers and process heating systems.</p>
+        <a href="#contact">Learn more →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1581093458791-9d15482442f6?auto=format&fit=crop&w=900&q=80">
+      <div>
+        <h3>Boilers & Boiler Room Equipment</h3>
+        <p>Steam boilers, hot water boilers, economizers, deaerators and auxiliary equipment.</p>
+        <a href="#contact">Learn more →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80">
+      <div>
+        <h3>KRAL Pumps</h3>
+        <p>High-quality screw pumps for marine, industrial and energy applications.</p>
+        <a href="#contact">Learn more →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=900&q=80">
+      <div>
+        <h3>Spare Parts & Components</h3>
+        <p>Original spare parts for industrial equipment and process systems.</p>
+        <a href="#contact">Learn more →</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=900&q=80">
+      <div>
+        <h3>Agricultural Machinery & Parts</h3>
+        <p>Agricultural equipment and original spare parts for leading brands.</p>
+        <a href="#contact">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="supply" class="section supply">
+  <div>
+    <p class="eyebrow">Supplying from Canada, USA & Europe</p>
+    <h2>Reliable Supply Chain. Global Reach.</h2>
+    <p>
+      We source equipment and parts from reliable manufacturers in Canada, USA and Europe
+      and deliver to clients across Kazakhstan and CIS countries.
+    </p>
+    <a class="btn" href="#contact">Learn More About Supply Regions</a>
+  </div>
+
+  <div class="regions">
+    <div class="region-card">
+      <span>🇨🇦</span>
+      <h3>Canada</h3>
+      <p>Access to Canadian manufacturers and reliable industrial suppliers.</p>
+    </div>
+
+    <div class="region-card">
+      <span>🇺🇸</span>
+      <h3>USA</h3>
+      <p>Industrial equipment and components from trusted American brands.</p>
+    </div>
+
+    <div class="region-card">
+      <span>🇪🇺</span>
+      <h3>Europe</h3>
+      <p>European engineering, advanced technology and premium equipment.</p>
+    </div>
+  </div>
+</section>
+
+<section id="logistics" class="section logistics">
+  <div>
+    <p class="eyebrow">Logistics & Customs</p>
+    <h2>End-to-End Delivery and Customs Support</h2>
+    <p>
+      We handle procurement, documentation, export logistics and customs clearance coordination
+      to ensure smooth and timely delivery of your cargo.
+    </p>
+    <a class="btn" href="#contact">Learn More</a>
+  </div>
+
+  <div class="stats">
+    <div><strong>100+</strong><p>Manufacturers Worldwide</p></div>
+    <div><strong>5000+</strong><p>Products & Parts Portfolio</p></div>
+    <div><strong>15+</strong><p>Years of Experience</p></div>
+    <div><strong>200+</strong><p>Satisfied Clients</p></div>
+  </div>
+</section>
+
+<section id="contact" class="section contact">
+  <div>
+    <p class="eyebrow">Contact Us</p>
+    <h2>Request a Commercial Offer</h2>
+    <p>
+      Send us your equipment request, part numbers, technical specifications or project details.
+      Our team will review your request and prepare a suitable offer.
+    </p>
+  </div>
+
+  <form>
+    <input type="text" placeholder="Your name" required>
+    <input type="email" placeholder="Email address" required>
+    <input type="text" placeholder="Company name">
+    <textarea placeholder="Describe your request" rows="5"></textarea>
+    <button class="btn" type="submit">Send Request</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 MBIExport Inc. All rights reserved.
+</footer>
+
+</body>
+</html>
