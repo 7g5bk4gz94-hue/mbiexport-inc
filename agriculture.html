@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agricultural Machinery & Parts | MBIExport</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #071F2E;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 6%;
+      background: #061A28;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+   .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 95px;
+  width: auto;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.03);
+}
+
+    nav a:hover {
+      color: #35C9FF;
+    }
+
+    .btn {
+      background: #35C9FF;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      border: 1px solid #35C9FF;
+    }
+
+    .btn-outline {
+      background: transparent;
+    }
+
+    .hero {
+      min-height: 720px;
+      padding: 140px 6% 80px;
+      background:
+        linear-gradient(90deg, rgba(5,18,35,0.92), rgba(7,36,62,0.68)),
+        url("vancouver-port.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      color: #35C9FF;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin: 20px 0;
+    }
+
+    h2 {
+      font-size: 38px;
+      line-height: 1.2;
+    }
+
+    p {
+      color: #c6d9dc;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      gap: 18px;
+    }
+
+    .section {
+      padding: 80px 6%;
+      max-width: 1280px;
+      margin: auto;
+    }
+
+    .trust-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin: -60px 6% 40px;
+      border: 1px solid rgba(53,201,255,0.30);
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .trust-item {
+      padding: 28px;
+      font-weight: bold;
+      border-right: 1px solid rgba(53,201,255,0.28);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(53,201,255,0.28);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: end;
+      margin-bottom: 35px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(53,201,255,0.28);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: 0.35s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: #35C9FF;
+      box-shadow: 0 25px 60px rgba(53,201,255,0.18);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+      transition: 0.45s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-card div {
+      padding: 22px;
+    }
+
+    .product-card a {
+      color: #35C9FF;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .supply {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .regions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .region-card {
+      min-height: 220px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(53,201,255,0.28);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .region-card span {
+      font-size: 42px;
+    }
+
+    .logistics {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .stats div {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(53,201,255,0.28);
+      border-radius: 14px;
+      padding: 30px;
+    }
+
+    .stats strong {
+      display: block;
+      font-size: 36px;
+      color: white;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 40px;
+    }
+
+    form {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(53,201,255,0.28);
+      border-radius: 14px;
+      padding: 30px;
+      display: grid;
+      gap: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 16px;
+      border-radius: 6px;
+      border: 1px solid rgba(53,201,255,0.28);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(53,201,255,0.28);
+      color: #c6d9dc;
+    }
+
+
+    .page-hero {
+      min-height: 560px;
+      padding: 150px 6% 80px;
+      background:
+        linear-gradient(90deg, rgba(5,18,35,0.95), rgba(7,36,62,0.72), rgba(7,36,62,0.22)),
+        url("agriculture.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .page-hero-content {
+      max-width: 760px;
+    }
+
+    .breadcrumb {
+      color: #35C9FF;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .info-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(53,201,255,0.28);
+      border-radius: 14px;
+      padding: 30px;
+    }
+
+    .info-card ul {
+      margin-top: 18px;
+      padding-left: 20px;
+      color: #c6d9dc;
+      line-height: 1.9;
+    }
+
+    .brand-list {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .brand-list span {
+      padding: 20px;
+      text-align: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(53,201,255,0.28);
+      border-radius: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .cta-section {
+      text-align: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(53,201,255,0.28);
+      border-radius: 18px;
+      padding: 50px 30px;
+    }
+
+    @media (max-width: 1000px) {
+      nav {
+        display: none;
+      }
+
+      .trust-bar,
+      .features,
+      .products,
+      .regions,
+      .supply,
+      .logistics,
+      .contact,
+      .content-grid,
+      .brand-list {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .section-head {
+        display: block;
+      }
+    }
+  
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="index.html">
+    <img src="logo.png" alt="MBIExport Logo">
+  </a>
+
+  <nav>
+    <a href="index.html#home">Home</a>
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#products">Products</a>
+    <a href="index.html#supply">Supply Regions</a>
+    <a href="index.html#logistics">Logistics</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <a class="btn" href="index.html#contact">Request a Quote</a>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-content">
+    <a class="breadcrumb" href="index.html#products">← Back to Products</a>
+    <p class="eyebrow">Agricultural Machinery & Original Spare Parts</p>
+    <h1>Reliable Supply of Agricultural Equipment and OEM Parts</h1>
+    <p>
+      MBIExport supplies agricultural machinery and genuine spare parts from leading
+      North American and European brands for farms, dealers and industrial customers.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="index.html#contact">Request a Quote</a>
+      <a class="btn btn-outline" href="#brands">View Brands</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="brands">
+  <p class="eyebrow">Brands We Supply</p>
+  <h2>Leading Agricultural Brands</h2>
+  <p>
+    We help source equipment and original spare parts for well-known agricultural machinery brands.
+  </p>
+
+  <div class="brand-list">
+    <span>VERSATILE</span>
+    <span>BOURGAULT</span>
+    <span>MACDON</span>
+    <span>JOHN DEERE</span>
+    <span>CASE IH</span>
+    <span>NEW HOLLAND</span>
+    <span>MASSEY FERGUSON</span>
+    <span>FENDT</span>
+    <span>CLAAS</span>
+    <span>KUBOTA</span>
+  </div>
+</section>
+
+<section class="section">
+  <div class="content-grid">
+    <div class="info-card">
+      <h2>Machinery</h2>
+      <p>We can support sourcing of agricultural equipment and machinery for different farming applications.</p>
+      <ul>
+        <li>Tractors</li>
+        <li>Combines</li>
+        <li>Self-propelled sprayers</li>
+        <li>Seeders and air drills</li>
+        <li>Tillage equipment</li>
+        <li>Hay and forage equipment</li>
+      </ul>
+    </div>
+
+    <div class="info-card">
+      <h2>OEM Spare Parts</h2>
+      <p>We supply genuine spare parts and replacement components based on part numbers and specifications.</p>
+      <ul>
+        <li>Engines and transmission components</li>
+        <li>Hydraulic pumps and valves</li>
+        <li>Bearings, seals and filters</li>
+        <li>Electrical components and sensors</li>
+        <li>Axles, hubs and driveline parts</li>
+        <li>Cab components and glass</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-section">
+    <p class="eyebrow">Need a specific part?</p>
+    <h2>Send us your part number or equipment model</h2>
+    <p>
+      Our team will review your request and prepare a quotation with availability,
+      origin, delivery time and export documentation.
+    </p>
+    <br>
+    <a class="btn" href="index.html#contact">Request a Quote</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 MBIExport Inc. All rights reserved.
+</footer>
+
+</body>
+</html>
