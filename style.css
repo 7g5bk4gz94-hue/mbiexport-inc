@@ -381,4 +381,65 @@ p {
   .footer-inner {
     flex-direction: column;
   }
+  /* FINAL HERO OVERRIDE */
+
+.header-inner {
+  height: 160px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  height: 135px !important;
+  width: auto;
+  transform: scale(1.35);
+  transform-origin: left center;
+}
+
+.hero {
+  min-height: calc(100vh - 160px);
+  padding-top: 0;
+}
+
+.hero .container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.hero-grid {
+  width: 100%;
+  max-width: none;
+  display: grid;
+  grid-template-columns: 48% 52%;
+  gap: 0;
+}
+
+.hero-content {
+  padding-left: 8vw;
+  padding-right: 70px;
+}
+
+.hero-image {
+  height: calc(100vh - 160px);
+  min-height: 650px;
+  border-radius: 0;
+  box-shadow: none;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.7) 22%, rgba(255,255,255,0) 42%),
+    url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: 78px;
+  max-width: 680px;
+}
+
+.hero-text {
+  max-width: 640px;
 }
