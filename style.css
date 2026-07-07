@@ -129,7 +129,7 @@ a {
       rgba(3,29,34,0.45) 60%,
       rgba(3,29,34,0.18) 100%
     ),
-    url("images/vancouver-port.png");
+    url("vancouver-port.png");
 
   background-size: cover;
   background-position: center center;
