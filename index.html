@@ -48,6 +48,14 @@
   transform: scale(1.03);
 }
 
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
     nav a:hover {
       color: #35C9FF;
     }
@@ -281,44 +289,6 @@
       border-top: 1px solid rgba(53,201,255,0.28);
       color: #c6d9dc;
     }
-
-
-    /* Brands We Supply */
-    .brands {
-      text-align: center;
-    }
-
-    .brands p {
-      max-width: 760px;
-      margin: 15px auto 0;
-      color: #c6d9dc;
-    }
-
-    .brand-grid {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 20px;
-    }
-
-    .brand-item {
-      padding: 22px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(53,201,255,0.28);
-      border-radius: 14px;
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 18px;
-      letter-spacing: 1px;
-      transition: 0.3s ease;
-    }
-
-    .brand-item:hover {
-      transform: translateY(-6px);
-      border-color: #35C9FF;
-      box-shadow: 0 15px 35px rgba(53,201,255,0.18);
-    }
-
     @media (max-width: 1000px) {
       nav {
         display: none;
@@ -330,8 +300,7 @@
       .regions,
       .supply,
       .logistics,
-      .contact,
-      .brand-grid {
+      .contact {
         grid-template-columns: 1fr;
       }
 
@@ -349,7 +318,7 @@
 <body>
 
 <header>
-  <a class="logo" href="#">
+  <a class="logo" href="index.html">
     <img src="logo.png" alt="MBIExport Logo">
   </a>
 
@@ -425,7 +394,7 @@
       <div>
         <h3>Industrial Burners</h3>
         <p>High-efficiency burners for boilers and process heating systems.</p>
-        <a href="#contact">Learn more →</a>
+        <a href="burners.html">Learn more →</a>
       </div>
     </div>
 
@@ -434,7 +403,7 @@
       <div>
         <h3>Boilers & Boiler Room Equipment</h3>
         <p>Steam boilers, hot water boilers, economizers, deaerators and auxiliary equipment.</p>
-        <a href="#contact">Learn more →</a>
+        <a href="boilers.html">Learn more →</a>
       </div>
     </div>
 
@@ -443,7 +412,7 @@
       <div>
         <h3>KRAL Pumps</h3>
         <p>High-quality screw pumps for marine, industrial and energy applications.</p>
-        <a href="#contact">Learn more →</a>
+        <a href="kral-pumps.html">Learn more →</a>
       </div>
     </div>
 
@@ -452,7 +421,7 @@
       <div>
         <h3>Spare Parts & Components</h3>
         <p>Original spare parts for industrial equipment and process systems.</p>
-        <a href="#contact">Learn more →</a>
+        <a href="spare-parts.html">Learn more →</a>
       </div>
     </div>
 
@@ -461,33 +430,12 @@
       <div>
         <h3>Agricultural Machinery & Parts</h3>
         <p>Agricultural equipment and original spare parts for leading brands.</p>
-        <a href="#contact">Learn more →</a>
+        <a href="agriculture.html">Learn more →</a>
       </div>
     </div>
   </div>
 </section>
 
-
-<section class="section brands" id="brands">
-  <p class="eyebrow">Agricultural Machinery & Original Spare Parts</p>
-  <h2>Brands We Supply</h2>
-  <p>
-    We supply agricultural equipment and OEM spare parts for leading North American and European brands.
-  </p>
-
-  <div class="brand-grid">
-    <div class="brand-item">VERSATILE</div>
-    <div class="brand-item">BOURGAULT</div>
-    <div class="brand-item">MACDON</div>
-    <div class="brand-item">JOHN DEERE</div>
-    <div class="brand-item">CASE IH</div>
-    <div class="brand-item">NEW HOLLAND</div>
-    <div class="brand-item">MASSEY FERGUSON</div>
-    <div class="brand-item">FENDT</div>
-    <div class="brand-item">CLAAS</div>
-    <div class="brand-item">KUBOTA</div>
-  </div>
-</section>
 
 <section id="supply" class="section supply">
   <div>
