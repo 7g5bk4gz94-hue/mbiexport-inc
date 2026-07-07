@@ -118,11 +118,22 @@ a {
 
 .hero {
   position: relative;
-  min-height: 790px;
+  min-height: 100vh;
   padding: 180px 5% 90px;
+
   background:
-    linear-gradient(90deg, rgba(3,29,34,0.95) 0%, rgba(3,29,34,0.78) 40%, rgba(3,29,34,0.2) 100%),
-    url("https://images.unsplash.com/photo-1570142071396-6b8d7c75c6e6?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+    linear-gradient(
+      90deg,
+      rgba(3,29,34,0.92) 0%,
+      rgba(3,29,34,0.78) 35%,
+      rgba(3,29,34,0.45) 60%,
+      rgba(3,29,34,0.18) 100%
+    ),
+    url("images/vancouver-port.png");
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   overflow: hidden;
 }
 
