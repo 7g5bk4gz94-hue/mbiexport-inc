@@ -1,415 +1,379 @@
-:root {
-  --dark: #071827;
-  --blue: #0b2d4d;
-  --green: #1f9b67;
-  --text: #142033;
-  --muted: #667085;
-  --light: #f6f8fb;
-  --white: #ffffff;
-  --border: #e6eaf0;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: var(--white);
-  line-height: 1.6;
-}
-
-.container {
-  width: 86%;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-/* HEADER */
-
-.header {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  z-index: 1000;
-}
-
-.header-inner {
-  height: 90px; /* Уменьшили со 150px, чтобы шапка была аккуратной, как на макете */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-}
-
-.brand img {
-  height: 55px; /* Аккуратный размер логотипа */
-  width: auto;
-  display: block;
-}
-
-.nav {
-  display: flex;
-  gap: 36px;
-  margin-left: auto;
-  margin-right: 48px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: var(--blue);
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.nav a:hover {
-  color: var(--green);
-}
-
-.header-btn {
-  padding: 14px 28px;
-  border-radius: 8px;
-  background: var(--green);
-  color: var(--white);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-/* HERO */
-
-.hero {
-  min-height: calc(100vh - 90px);
-  background: #f7f9fc; /* Мягкий фон для левой части */
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-/* Контейнер удерживает контент в рамках сетки */
-.hero .container {
-  position: relative;
-  z-index: 10;
-  width: 90%;
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
-/* Контент строго в левой половине */
-.hero-content {
-  width: 50%;
-  padding-right: 50px;
-}
-
-.slogan {
-  color: var(--green);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  color: var(--dark);
-  font-size: 64px; 
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: -1px;
-  margin-bottom: 24px;
-}
-
-.hero-text {
-  color: var(--muted);
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 36px;
-  max-width: 540px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  transition: all 0.2s ease;
-}
-
-.btn.primary {
-  background: var(--green);
-  color: var(--white);
-}
-
-.btn.secondary {
-  border: 1px solid var(--dark);
-  color: var(--dark);
-  background: transparent;
-}
-
-/* Блок для картинки — теперь он жестко прижат вправо на 50% ширины экрана */
-.hero-image-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%; 
-  height: 100%;
-  z-index: 1;
-}
-
-/* Маска-градиент поверх картинки */
-.hero-image-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -1px; 
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #f7f9fc 0%, rgba(247, 249, 252, 0.7) 20%, rgba(247, 249, 252, 0) 60%);
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  background-image: url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1800&q=80"); /* Ваша ссылка */
-  background-size: cover;
-  background-position: center center;
-}
-
-/* GENERAL SECTIONS */
-
-.section {
-  padding: 105px 0;
-}
-
-.expertise,
-.process {
-  background: var(--light);
-}
-
-h2 {
-  color: var(--dark);
-  font-size: 46px;
-  line-height: 1.12;
-  letter-spacing: -1.5px;
-  max-width: 760px;
-  margin-bottom: 22px;
-}
-
-p {
-  color: var(--muted);
-  font-size: 18px;
-}
-
-.cards,
-.trust-grid,
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  margin-top: 54px;
-}
-
-.card,
-.trust-grid div,
-.process-grid div {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 30px;
-  min-height: 230px;
-}
-
-.card span,
-.process-grid span {
-  color: var(--green);
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.card h3,
-.trust-grid h3,
-.process-grid h3 {
-  color: var(--dark);
-  font-size: 20px;
-  margin: 16px 0 12px;
-}
-
-.card {
-  transition: 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(31,155,103,0.35);
-}
-
-.about-grid,
-.industries-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-}
-
-.about-grid p {
-  margin-bottom: 18px;
-}
-
-.industries {
-  background: var(--dark);
-}
-
-.industries h2 {
-  color: var(--white);
-}
-
-.industry-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.industry-tags span {
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 999px;
-  padding: 13px 18px;
-  font-weight: 800;
-}
-
-.contact {
-  background: var(--white);
-  padding: 105px 0;
-}
-
-.contact-inner {
-  background: var(--dark);
-  border-radius: 30px;
-  padding: 64px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.contact h2 {
-  color: var(--white);
-}
-
-.contact p {
-  color: #dce6ef;
-}
-
-.contact-details p {
-  margin-bottom: 18px;
-}
-
-.footer {
-  background: #04111d;
-  color: #dce6ef;
-  padding: 28px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  font-size: 14px;
-}
-
-/* MOBILE */
-
-@media (max-width: 1000px) {
-  .container {
-    width: 88%;
-  }
-
-  .nav,
-  .header-btn {
-    display: none;
-  }
-
-  .header-inner {
-    height: 100px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .brand img {
-    height: 82px;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-content {
-    padding: 80px 6vw 50px;
-  }
-
-  .hero h1 {
-    font-size: 46px;
-    letter-spacing: -1.5px;
-  }
-
-  .hero-text {
-    font-size: 18px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .hero-image {
-    min-height: 360px;
-  }
-
-  .cards,
-  .trust-grid,
-  .process-grid,
-  .about-grid,
-  .industries-grid,
-  .contact-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .section,
-  .contact {
-    padding: 78px 0;
-  }
-
-  .contact-inner {
-    padding: 36px;
-    border-radius: 22px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBIEXPORT - Global Industrial Supply Solutions</title>
+  <style>
+    /* ==========================================================================
+       КОРНЕВЫЕ ПЕРЕМЕННЫЕ И СБРОСЫ СТИЛЕЙ
+       ========================================================================== */
+    :root {
+      --dark: #06152d;       
+      --blue: #0f2942;       
+      --green: #0fa455;      
+      --text: #1a2b40;       
+      --muted: #4a5d73;      
+      --light: #f4f7fa;      
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --hero-bg: #f7f9fc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* ==========================================================================
+       ШАПКА САЙТА (HEADER)
+       ========================================================================== */
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      height: 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand img {
+      height: 55px;
+      width: auto;
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      gap: 36px;
+      margin-left: auto;
+      margin-right: 48px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--blue);
+      font-size: 15px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--green);
+    }
+
+    /* Универсальные кнопки */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn.primary, .header-btn {
+      background: var(--green);
+      color: var(--white);
+      border: none;
+    }
+
+    .btn.primary:hover, .header-btn:hover {
+      background: #0d8f4a;
+    }
+
+    .btn.secondary {
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      background: transparent;
+    }
+
+    .btn.secondary:hover {
+      background: rgba(6, 21, 45, 0.04);
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    /* ==========================================================================
+       ГЛАВНЫЙ ЭКРАН (HERO SECTION) — ИСПРАВЛЕННЫЙ
+       ========================================================================== */
+    .hero {
+      min-height: calc(100vh - 90px);
+      background: var(--hero-bg);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 10;
+    }
+
+    .hero-content {
+      width: 50%;
+      padding-right: 40px;
+    }
+
+    .slogan {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      color: var(--dark);
+      font-size: 64px;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+    }
+
+    /* Правая часть: Контейнер для абсолютного позиционирования фото */
+    .hero-image-wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    /* Плавный градиент-маска, наплывающий на корабль слева */
+    .hero-image-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -1px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #f7f9fc 0%, rgba(247, 249, 252, 0.7) 20%, rgba(247, 249, 252, 0) 60%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Картинка корабля (вставлена качественная заглушка с Unsplash) */
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      background-image: url("https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=80");
+      background-size: cover;
+      background-position: center center;
+    }
+
+    /* ==========================================================================
+       ОСТАЛЬНЫЕ СЕКЦИИ САЙТА
+       ========================================================================== */
+    .section {
+      padding: 100px 0;
+    }
+
+    .expertise {
+      background: var(--light);
+    }
+
+    h2 {
+      color: var(--dark);
+      font-size: 38px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: all 0.3s ease;
+      min-height: 250px;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(6, 21, 45, 0.06);
+      border-color: rgba(15, 164, 85, 0.4);
+    }
+
+    .card h3 {
+      color: var(--dark);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ==========================================================================
+       АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+       ========================================================================== */
+    @media (max-width: 1100px) {
+      .nav, .header-btn {
+        display: none;
+      }
+      .header-inner {
+        justify-content: center;
+      }
+      .hero {
+        min-height: auto;
+        padding: 60px 0;
+      }
+      .hero .container {
+        width: 90%;
+      }
+      .hero-content {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+      }
+      .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-image-wrapper {
+        display: none; /* Прячем картинку на смартфонах, чтобы не ломать верстку */
+      }
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- НАВИГАЦИЯ -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="brand">
+        <!-- Замените logo.png на реальный путь к вашему логотипу -->
+        <img src="https://via.placeholder.com/200x55/ffffff/06152d?text=MBIEXPORT" alt="MBIEXPORT">
+      </a>
+      <nav class="nav">
+        <a href="#">Solutions</a>
+        <a href="#">About</a>
+        <a href="#">Industries</a>
+        <a href="#">Contact</a>
+      </nav>
+      <a href="#" class="btn header-btn">Request a Quote</a>
+    </div>
+  </header>
+
+  <!-- ГЛАВНЫЙ ЭКРАН -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="slogan">Precision Parts. Global Reach. Canadian Reliability.</div>
+        <h1>Global Industrial Supply Solutions</h1>
+        <p class="hero-text">Connecting North American and European manufacturers with industrial and agricultural customers in international markets.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn primary">Request a Quote</a>
+          <a href="#" class="btn secondary">Explore Solutions</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Картинка лежит строго вне контейнера, прижатая к правому краю -->
+    <div class="hero-image-wrapper">
+      <div class="hero-image"></div>
+    </div>
+  </section>
+
+  <!-- БЛОК НАПРАВЛЕНИЙ (ПРИМЕР) -->
+  <section class="section expertise">
+    <div class="container">
+      <h2>Equipment supply across key industrial categories.</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Industrial Burners</h3>
+          <p>Burners, combustion systems, controls and accessories.</p>
+        </div>
+        <div class="card">
+          <h3>Industrial Pumps</h3>
+          <p>Pumps, components and fluid handling equipment.</p>
+        </div>
+        <div class="card">
+          <h3>Boiler Equipment</h3>
+          <p>Steam and hot water boiler components and systems.</p>
+        </div>
+        <div class="card">
+          <h3>Agricultural Parts</h3>
+          <p>Spare parts for tractors, sprayers and agricultural machinery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
