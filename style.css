@@ -1,379 +1,304 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MBIEXPORT - Global Industrial Supply Solutions</title>
-  <style>
-    /* ==========================================================================
-       КОРНЕВЫЕ ПЕРЕМЕННЫЕ И СБРОСЫ СТИЛЕЙ
-       ========================================================================== */
-    :root {
-      --dark: #06152d;       
-      --blue: #0f2942;       
-      --green: #0fa455;      
-      --text: #1a2b40;       
-      --muted: #4a5d73;      
-      --light: #f4f7fa;      
-      --white: #ffffff;
-      --border: #e2e8f0;
-      --hero-bg: #f7f9fc;
-    }
+:root {
+  --dark: #061827;
+  --blue: #0b2d4d;
+  --green: #1f9b67;
+  --text: #142033;
+  --muted: #667085;
+  --light: #f6f8fb;
+  --white: #ffffff;
+  --border: #e6eaf0;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
 
-    .container {
-      width: 90%;
-      max-width: 1440px;
-      margin: 0 auto;
-    }
+.site-header {
+  height: 170px;
+  padding: 0 7vw;
+  display: grid;
+  grid-template-columns: 280px 1fr 220px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+}
 
-    /* ==========================================================================
-       ШАПКА САЙТА (HEADER)
-       ========================================================================== */
-    .header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      z-index: 1000;
-    }
+.logo img {
+  height: 135px;
+  width: auto;
+  display: block;
+}
 
-    .header-inner {
-      height: 90px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 46px;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-    }
+.main-nav a {
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 800;
+}
 
-    .brand img {
-      height: 55px;
-      width: auto;
-      display: block;
-    }
+.quote-btn {
+  justify-self: end;
+  background: var(--green);
+  color: var(--white);
+  text-decoration: none;
+  padding: 18px 30px;
+  border-radius: 10px;
+  font-weight: 900;
+  font-size: 17px;
+}
 
-    .nav {
-      display: flex;
-      gap: 36px;
-      margin-left: auto;
-      margin-right: 48px;
-    }
+.hero {
+  min-height: calc(100vh - 170px);
+  display: grid;
+  grid-template-columns: 48% 52%;
+  background: var(--white);
+}
 
-    .nav a {
-      text-decoration: none;
-      color: var(--blue);
-      font-size: 15px;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
+.hero-text {
+  padding-left: 7vw;
+  padding-right: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .nav a:hover {
-      color: var(--green);
-    }
+.slogan,
+.section-label {
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 2.7px;
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 24px;
+}
 
-    /* Универсальные кнопки */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
+.hero h1 {
+  max-width: 680px;
+  color: var(--dark);
+  font-size: 78px;
+  line-height: 1.03;
+  letter-spacing: -3.5px;
+  margin-bottom: 30px;
+}
 
-    .btn.primary, .header-btn {
-      background: var(--green);
-      color: var(--white);
-      border: none;
-    }
+.description {
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 23px;
+  line-height: 1.55;
+  margin-bottom: 42px;
+}
 
-    .btn.primary:hover, .header-btn:hover {
-      background: #0d8f4a;
-    }
+.hero-buttons {
+  display: flex;
+  gap: 22px;
+}
 
-    .btn.secondary {
-      border: 1px solid var(--dark);
-      color: var(--dark);
-      background: transparent;
-    }
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 18px 34px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 900;
+}
 
-    .btn.secondary:hover {
-      background: rgba(6, 21, 45, 0.04);
-      border-color: var(--green);
-      color: var(--green);
-    }
+.btn.green {
+  background: var(--green);
+  color: var(--white);
+}
 
-    /* ==========================================================================
-       ГЛАВНЫЙ ЭКРАН (HERO SECTION) — ИСПРАВЛЕННЫЙ
-       ========================================================================== */
-    .hero {
-      min-height: calc(100vh - 90px);
-      background: var(--hero-bg);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-    }
+.btn.outline {
+  background: var(--white);
+  color: var(--blue);
+  border: 2px solid var(--blue);
+}
 
-    .hero .container {
-      position: relative;
-      z-index: 10;
-    }
+.hero-photo {
+  min-height: calc(100vh - 170px);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.68) 20%, rgba(255,255,255,0) 40%),
+    url("https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+}
 
-    .hero-content {
-      width: 50%;
-      padding-right: 40px;
-    }
+.section {
+  padding: 105px 7vw;
+}
 
-    .slogan {
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+.section h2 {
+  max-width: 760px;
+  color: var(--dark);
+  font-size: 46px;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  margin-bottom: 40px;
+}
 
-    .hero h1 {
-      color: var(--dark);
-      font-size: 64px;
-      line-height: 1.1;
-      font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 24px;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
 
-    .hero-text {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 36px;
-      max-width: 540px;
-    }
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px;
+  min-height: 220px;
+}
 
-    .hero-actions {
-      display: flex;
-      gap: 16px;
-    }
+.card h3 {
+  color: var(--dark);
+  font-size: 21px;
+  margin-bottom: 14px;
+}
 
-    /* Правая часть: Контейнер для абсолютного позиционирования фото */
-    .hero-image-wrapper {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 100%;
-      z-index: 1;
-    }
+.card p,
+.wide-text {
+  color: var(--muted);
+  font-size: 18px;
+}
 
-    /* Плавный градиент-маска, наплывающий на корабль слева */
-    .hero-image-wrapper::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -1px;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #f7f9fc 0%, rgba(247, 249, 252, 0.7) 20%, rgba(247, 249, 252, 0) 60%);
-      z-index: 2;
-      pointer-events: none;
-    }
+.light {
+  background: var(--light);
+}
 
-    /* Картинка корабля (вставлена качественная заглушка с Unsplash) */
-    .hero-image {
-      width: 100%;
-      height: 100%;
-      background-image: url("https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=80");
-      background-size: cover;
-      background-position: center center;
-    }
+.wide-text {
+  max-width: 760px;
+}
 
-    /* ==========================================================================
-       ОСТАЛЬНЫЕ СЕКЦИИ САЙТА
-       ========================================================================== */
-    .section {
-      padding: 100px 0;
-    }
+.dark {
+  background: var(--dark);
+}
 
-    .expertise {
-      background: var(--light);
-    }
+.dark h2 {
+  color: var(--white);
+}
 
-    h2 {
-      color: var(--dark);
-      font-size: 38px;
-      line-height: 1.2;
-      letter-spacing: -0.5px;
-      margin-bottom: 20px;
-    }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
+.tags span {
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.24);
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-weight: 800;
+}
 
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 32px;
-      transition: all 0.3s ease;
-      min-height: 250px;
-    }
+.contact {
+  margin: 105px 7vw;
+  background: var(--dark);
+  color: var(--white);
+  border-radius: 30px;
+  padding: 64px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(6, 21, 45, 0.06);
-      border-color: rgba(15, 164, 85, 0.4);
-    }
+.contact h2 {
+  color: var(--white);
+  font-size: 46px;
+  line-height: 1.12;
+  letter-spacing: -1.5px;
+  margin-bottom: 22px;
+}
 
-    .card h3 {
-      color: var(--dark);
-      font-size: 20px;
-      margin-bottom: 12px;
-    }
+.contact p {
+  color: #dce6ef;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
 
-    .card p {
-      color: var(--muted);
-      font-size: 15px;
-    }
+footer {
+  background: #04111d;
+  color: #dce6ef;
+  padding: 30px 7vw;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 14px;
+}
 
-    /* ==========================================================================
-       АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
-       ========================================================================== */
-    @media (max-width: 1100px) {
-      .nav, .header-btn {
-        display: none;
-      }
-      .header-inner {
-        justify-content: center;
-      }
-      .hero {
-        min-height: auto;
-        padding: 60px 0;
-      }
-      .hero .container {
-        width: 90%;
-      }
-      .hero-content {
-        width: 100%;
-        padding-right: 0;
-        text-align: center;
-      }
-      .hero-text {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .hero-actions {
-        justify-content: center;
-      }
-      .hero-image-wrapper {
-        display: none; /* Прячем картинку на смартфонах, чтобы не ломать верстку */
-      }
-      .cards {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+@media (max-width: 1000px) {
+  .site-header {
+    height: 110px;
+    display: flex;
+    justify-content: center;
+  }
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 40px;
-      }
-      .cards {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-<body>
+  .logo img {
+    height: 90px;
+  }
 
-  <!-- НАВИГАЦИЯ -->
-  <header class="header">
-    <div class="container header-inner">
-      <a href="#" class="brand">
-        <!-- Замените logo.png на реальный путь к вашему логотипу -->
-        <img src="https://via.placeholder.com/200x55/ffffff/06152d?text=MBIEXPORT" alt="MBIEXPORT">
-      </a>
-      <nav class="nav">
-        <a href="#">Solutions</a>
-        <a href="#">About</a>
-        <a href="#">Industries</a>
-        <a href="#">Contact</a>
-      </nav>
-      <a href="#" class="btn header-btn">Request a Quote</a>
-    </div>
-  </header>
+  .main-nav,
+  .quote-btn {
+    display: none;
+  }
 
-  <!-- ГЛАВНЫЙ ЭКРАН -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="slogan">Precision Parts. Global Reach. Canadian Reliability.</div>
-        <h1>Global Industrial Supply Solutions</h1>
-        <p class="hero-text">Connecting North American and European manufacturers with industrial and agricultural customers in international markets.</p>
-        <div class="hero-actions">
-          <a href="#" class="btn primary">Request a Quote</a>
-          <a href="#" class="btn secondary">Explore Solutions</a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Картинка лежит строго вне контейнера, прижатая к правому краю -->
-    <div class="hero-image-wrapper">
-      <div class="hero-image"></div>
-    </div>
-  </section>
+  .hero {
+    grid-template-columns: 1fr;
+  }
 
-  <!-- БЛОК НАПРАВЛЕНИЙ (ПРИМЕР) -->
-  <section class="section expertise">
-    <div class="container">
-      <h2>Equipment supply across key industrial categories.</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Industrial Burners</h3>
-          <p>Burners, combustion systems, controls and accessories.</p>
-        </div>
-        <div class="card">
-          <h3>Industrial Pumps</h3>
-          <p>Pumps, components and fluid handling equipment.</p>
-        </div>
-        <div class="card">
-          <h3>Boiler Equipment</h3>
-          <p>Steam and hot water boiler components and systems.</p>
-        </div>
-        <div class="card">
-          <h3>Agricultural Parts</h3>
-          <p>Spare parts for tractors, sprayers and agricultural machinery.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  .hero-text {
+    padding: 80px 7vw 50px;
+  }
 
-</body>
-</html>
+  .hero h1 {
+    font-size: 46px;
+    letter-spacing: -1.5px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-photo {
+    min-height: 360px;
+  }
+
+  .cards,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    margin: 78px 7vw;
+    padding: 36px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
