@@ -288,6 +288,43 @@ h3 {
   font-weight: 700;
 }
 
+/* ===================== BRANDS SECTION ===================== */
+
+.brands {
+  text-align: center;
+}
+
+.brands p {
+  max-width: 700px;
+  margin: 15px auto 0;
+  color: var(--muted);
+}
+
+.brand-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.brand-item {
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.brand-item:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+  box-shadow: 0 15px 35px rgba(32, 208, 202, 0.18);
+}
+
 .supply-section {
   display: grid;
   grid-template-columns: 0.85fr 1.4fr;
@@ -405,6 +442,10 @@ textarea::placeholder {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .supply-section,
   .logistics,
   .contact {
@@ -428,7 +469,8 @@ textarea::placeholder {
   .features,
   .trust-bar,
   .region-grid,
-  .stats {
+  .stats,
+  .brand-grid {
     grid-template-columns: 1fr;
   }
 
@@ -444,3 +486,29 @@ textarea::placeholder {
     margin-top: 24px;
   }
 }
+
+
+
+<!-- Вставь этот HTML-блок в index.html между Products и Supply -->
+
+<section class="section brands" id="brands">
+  <p class="eyebrow">Agricultural Machinery & Original Spare Parts</p>
+  <h2>Brands We Supply</h2>
+  <p>
+    We supply agricultural equipment and OEM spare parts for leading North American and European brands.
+  </p>
+
+  <div class="brand-grid">
+    <div class="brand-item">VERSATILE</div>
+    <div class="brand-item">BOURGAULT</div>
+    <div class="brand-item">MACDON</div>
+    <div class="brand-item">JOHN DEERE</div>
+    <div class="brand-item">CASE IH</div>
+    <div class="brand-item">NEW HOLLAND</div>
+    <div class="brand-item">MASSEY FERGUSON</div>
+    <div class="brand-item">FENDT</div>
+    <div class="brand-item">CLAAS</div>
+    <div class="brand-item">KUBOTA</div>
+    <div class="brand-item">Great Plains</div>
+  </div>
+</section>
