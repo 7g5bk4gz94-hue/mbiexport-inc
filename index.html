@@ -31,20 +31,22 @@
       text-decoration: none;
     }
 
-    .logo span {
-      display: block;
-      font-size: 11px;
-      color: #20d0ca;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+   .logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 14px;
-    }
+.logo img {
+  height: 72px;
+  width: auto;
+  display: block;
+  transition: 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.03);
+}
 
     nav a:hover {
       color: #20d0ca;
@@ -297,8 +299,7 @@
 
 <header>
   <a class="logo" href="#">
-    MBIEXPORT
-    <span>Industrial Solutions</span>
+    <img src="logo.png" alt="MBIExport Logo">
   </a>
 
   <nav>
