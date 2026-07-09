@@ -330,6 +330,115 @@
       color: #ffffff;
     }
 
+
+    .brand-section,
+    .industries-section {
+      text-align: center;
+    }
+
+    .brand-section p,
+    .industries-section p {
+      max-width: 780px;
+      margin: 14px auto 0;
+    }
+
+    .brand-grid,
+    .industry-grid {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .brand-item,
+    .industry-item {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(53,201,255,0.28);
+      border-radius: 14px;
+      padding: 22px 18px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s ease;
+    }
+
+    .industry-item {
+      text-align: left;
+      font-size: 16px;
+    }
+
+    .industry-item span {
+      display: block;
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .brand-item:hover,
+    .industry-item:hover {
+      transform: translateY(-6px);
+      border-color: #35C9FF;
+      box-shadow: 0 18px 42px rgba(53,201,255,0.18);
+    }
+
+    select {
+      width: 100%;
+      padding: 16px;
+      border-radius: 6px;
+      border: 1px solid rgba(53,201,255,0.28);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    select option {
+      color: #061A28;
+    }
+
+    .site-footer {
+      border-top: 1px solid rgba(53,201,255,0.28);
+      padding: 55px 6% 25px;
+      background: #061A28;
+      color: #c6d9dc;
+    }
+
+    .footer-grid {
+      max-width: 1280px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 35px;
+      text-align: left;
+    }
+
+    .footer-grid h3,
+    .footer-grid h4 {
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .footer-grid a {
+      display: block;
+      color: #c6d9dc;
+      text-decoration: none;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .footer-grid a:hover {
+      color: #35C9FF;
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 35px auto 0;
+      padding-top: 22px;
+      border-top: 1px solid rgba(53,201,255,0.18);
+      text-align: center;
+      font-size: 14px;
+      color: #c6d9dc;
+    }
+
+
     @media (max-width: 1000px) {
       nav {
         display: none;
@@ -341,7 +450,10 @@
       .regions,
       .supply,
       .logistics,
-      .contact {
+      .contact,
+      .brand-grid,
+      .industry-grid,
+      .footer-grid {
         grid-template-columns: 1fr;
       }
 
@@ -563,6 +675,51 @@
 </section>
 
 
+
+<section class="section brand-section">
+  <p class="eyebrow">Brands We Supply</p>
+  <h2>Trusted Manufacturers and Equipment Brands</h2>
+  <p>
+    We help customers source industrial equipment, agricultural machinery and OEM spare parts
+    from leading North American and European manufacturers.
+  </p>
+
+  <div class="brand-grid">
+    <div class="brand-item">RIELLO</div>
+    <div class="brand-item">OILON</div>
+    <div class="brand-item">KRAL</div>
+    <div class="brand-item">VERSATILE</div>
+    <div class="brand-item">BOURGAULT</div>
+    <div class="brand-item">MACDON</div>
+    <div class="brand-item">JOHN DEERE</div>
+    <div class="brand-item">CASE IH</div>
+    <div class="brand-item">NEW HOLLAND</div>
+    <div class="brand-item">MASSEY FERGUSON</div>
+  </div>
+</section>
+
+<section class="section industries-section">
+  <p class="eyebrow">Industries We Serve</p>
+  <h2>Industrial and Agricultural Supply for Key Sectors</h2>
+  <p>
+    MBIExport supports customers across energy, manufacturing, agriculture,
+    boiler houses and international trade projects.
+  </p>
+
+  <div class="industry-grid">
+    <div class="industry-item"><span>⚡</span>Energy & Utilities</div>
+    <div class="industry-item"><span>🏭</span>Manufacturing</div>
+    <div class="industry-item"><span>🔥</span>Boiler Houses</div>
+    <div class="industry-item"><span>🛢</span>Oil & Gas</div>
+    <div class="industry-item"><span>🌾</span>Agriculture</div>
+    <div class="industry-item"><span>🚢</span>Marine</div>
+    <div class="industry-item"><span>🏗</span>EPC Contractors</div>
+    <div class="industry-item"><span>🥛</span>Food Processing</div>
+    <div class="industry-item"><span>⛏</span>Mining</div>
+    <div class="industry-item"><span>🌍</span>International Trade</div>
+  </div>
+</section>
+
 <section id="supply" class="section supply">
   <div>
     <p class="eyebrow">Supplying from Canada, USA & Europe</p>
@@ -625,16 +782,63 @@
   </div>
 
   <form>
-    <input type="text" placeholder="Your name" required>
-    <input type="email" placeholder="Email address" required>
-    <input type="text" placeholder="Company name">
-    <textarea placeholder="Describe your request" rows="5"></textarea>
-    <button class="btn" type="submit">Send Request</button>
+    <input type="text" name="name" placeholder="Full name" required>
+    <input type="email" name="email" placeholder="Email address" required>
+    <input type="text" name="company" placeholder="Company name">
+    <input type="text" name="country" placeholder="Country">
+    <select name="category">
+      <option value="">Product category</option>
+      <option>Industrial Burners</option>
+      <option>Boilers & Boiler Room Equipment</option>
+      <option>KRAL Pumps</option>
+      <option>Spare Parts & Components</option>
+      <option>Agricultural Machinery & Parts</option>
+      <option>Other</option>
+    </select>
+    <input type="text" name="part_number" placeholder="Part number / model (optional)">
+    <textarea name="message" placeholder="Describe your request" rows="5"></textarea>
+    <button class="btn" type="submit">Request a Quotation</button>
   </form>
 </section>
 
-<footer>
-  © 2026 MBIExport Inc. All rights reserved.
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h3>MBIExport Inc.</h3>
+      <p>
+        Canadian supplier of industrial equipment, OEM spare parts,
+        agricultural machinery and export logistics support.
+      </p>
+    </div>
+
+    <div>
+      <h4>Products</h4>
+      <a href="burners.html">Industrial Burners</a>
+      <a href="boilers.html">Boilers</a>
+      <a href="kral-pumps.html">KRAL Pumps</a>
+      <a href="spare-parts.html">Spare Parts</a>
+      <a href="agriculture.html">Agricultural Machinery</a>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <a href="#about">About Us</a>
+      <a href="#supply">Supply Regions</a>
+      <a href="#logistics">Logistics</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>Canada</p>
+      <p>Email: sales@mbiexport.com</p>
+      <p>Worldwide export support</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 MBIExport Inc. All rights reserved.
+  </div>
 </footer>
 
 </body>
