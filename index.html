@@ -13,20 +13,20 @@
   <meta name="author" content="MBIExport Inc.">
   <meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://mbiexport.com/">
+  <link rel="canonical" href="https://mbiexport.ca/">
   <link rel="icon" href="logo.png">
 
   <meta property="og:title" content="MBIExport Inc. | Industrial Equipment & Original Spare Parts">
   <meta property="og:description" content="Canadian supplier of industrial equipment, burners, boilers, KRAL pumps, agricultural machinery and OEM spare parts.">
-  <meta property="og:image" content="https://mbiexport.com/logo.png">
-  <meta property="og:url" content="https://mbiexport.com/">
+  <meta property="og:image" content="https://mbiexport.ca/logo.png">
+  <meta property="og:url" content="https://mbiexport.ca/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MBIExport Inc.">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MBIExport Inc. | Industrial Equipment & Original Spare Parts">
   <meta name="twitter:description" content="Canadian supplier of industrial equipment, burners, boilers, KRAL pumps, agricultural machinery and OEM spare parts.">
-  <meta name="twitter:image" content="https://mbiexport.com/logo.png">
+  <meta name="twitter:image" content="https://mbiexport.ca/logo.png">
 
 
   <style>
@@ -307,6 +307,17 @@
       box-sizing: border-box;
     }
 
+
+    .form-success {
+      display: none;
+      background: rgba(64, 201, 120, 0.14);
+      border: 1px solid rgba(64, 201, 120, 0.55);
+      border-radius: 8px;
+      padding: 14px 16px;
+      color: #d8ffe7;
+      margin-bottom: 15px;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -471,7 +482,7 @@
 <body>
 
 <header>
-  <a class="logo" href="index.html">
+  <a class="logo" href="https://mbiexport.ca/">
     <img src="logo.png" alt="MBIExport Logo">
   </a>
 
@@ -781,7 +792,13 @@
     </p>
   </div>
 
-  <form>
+  <div>
+    <div id="form-success" class="form-success">Thank you! Your request has been submitted successfully.</div>
+    <form action="https://formsubmit.co/info@mbiexport.ca" method="POST">
+      <input type="hidden" name="_subject" value="New quotation request from mbiexport.ca">
+      <input type="hidden" name="_next" value="https://mbiexport.ca/?submitted=true#contact">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none">
     <input type="text" name="name" placeholder="Full name" required>
     <input type="email" name="email" placeholder="Email address" required>
     <input type="text" name="company" placeholder="Company name">
@@ -796,9 +813,10 @@
       <option>Other</option>
     </select>
     <input type="text" name="part_number" placeholder="Part number / model (optional)">
-    <textarea name="message" placeholder="Describe your request" rows="5"></textarea>
+    <textarea name="message" placeholder="Describe your request" rows="5" required></textarea>
     <button class="btn" type="submit">Request a Quotation</button>
-  </form>
+    </form>
+  </div>
 </section>
 
 <footer class="site-footer">
@@ -831,7 +849,7 @@
     <div>
       <h4>Contact</h4>
       <p>Canada</p>
-      <p>Email: sales@mbiexport.com</p>
+      <p>Email: <a href="mailto:info@mbiexport.ca">info@mbiexport.ca</a></p>
       <p>Worldwide export support</p>
     </div>
   </div>
@@ -840,6 +858,18 @@
     © 2026 MBIExport Inc. All rights reserved.
   </div>
 </footer>
+
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("submitted") === "true") {
+    const successMessage = document.getElementById("form-success");
+    if (successMessage) {
+      successMessage.style.display = "block";
+    }
+    window.history.replaceState({}, document.title, window.location.pathname + "#contact");
+  }
+</script>
 
 </body>
 </html>
